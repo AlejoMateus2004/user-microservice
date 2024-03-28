@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: user-microservice
+  mvc:
+    pathmatch:
+      matching-strategy : ANT_PATH_MATCHER
+
+management:
+  server:
+    port: 9002
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+
+springdoc:
+  swagger-ui:
+    enabled: true
+  show-actuator: true
